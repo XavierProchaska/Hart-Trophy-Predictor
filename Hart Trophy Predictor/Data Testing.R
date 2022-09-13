@@ -56,3 +56,8 @@ third <- c('Pavel Datsyuk', 'Sidney Crosby', 'Martin St. Louis', 'Henrik Lundqvi
            'John Tavares', 'Claude Giroux', 'John Tavares', 'Jamie Benn', 'Sergei Bobrovsky', 
            'Anze Kopitar', 'Connor McDavid', 'Artemi Panarin', 'Nathan MacKinnon', 'Igor Shesterkin')
 hart_voting_by_season <- data.frame(season, first, second, third)
+
+stat <- c('led league in goals', 'led league in points', 'led league in assists', 
+           'led league in plus/minus')
+no_of_occurences <- c('4/14', '6/14', '8/14', '0/14')
+hart_winner_trends <- data.frame(stat, no_of_occurences)
