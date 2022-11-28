@@ -34,4 +34,6 @@ forward_hart_points <- function(raw_data, playoffs) {
   new_data <- new_data[order(new_data$hart_points, decreasing = TRUE),]
   return(head(new_data, n = 10L))
 }
+playoffs22 <- c('CAR', 'NYR', 'PIT', 'FLA', 'TOR', 'TBL', 'BOS', 'WSH', 'COL',
+                'MIN', 'STL', 'CGY', 'EDM', 'LAK', 'DAL', 'NSH')
 forward_hart_points('/home/xavier/Documents/Hart Trophy Predictor/Raw Data/skaters_21-22.csv', playoffs22)
