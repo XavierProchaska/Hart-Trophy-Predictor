@@ -12,11 +12,14 @@ forward_hart_points <- function(raw_data, playoffs) {
     if(toString(new_data$team[j]) %in% playoffs) {
       hart[j] <- hart[j] + 10
     }
+    else {
+      hart[j] <- hart[j] - 5
+    }
   }
   new_data$hart_points <- hart
   
   for (k in 1:nrow(new_data)) {
-    if(new_data$I_F_goals[k] >= 50) {
+    if(new_data$I_F_goals[k] >= 50 && new_data$I_F_points[k] >= 80) {
       new_data$hart_points[k] <- new_data$hart_points[k] + 20
     }
   }
@@ -34,4 +37,4 @@ forward_hart_points <- function(raw_data, playoffs) {
   new_data <- new_data[order(new_data$hart_points, decreasing = TRUE),]
   return(head(new_data, n = 10L))
 }
-forward_hart_points('/home/xavier/Documents/Hart Trophy Predictor/Raw Data/skaters_21-22.csv', playoffteams22)
+forward_hart_points('/home/xavier/Documents/Hart Trophy Predictor/Raw Data/skaters_11-12.csv', playoffteams12)
