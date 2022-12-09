@@ -61,3 +61,65 @@ d_playoffs15 <- c('Yes', 'Yes', 'No', 'Yes', 'Yes')
 dmen_scoring_data15 <- data.frame(hart_position15, dmen15, d_goals15, d_assists15, d_points15, d_playoffs15)
 colnames(dmen_scoring_data15) <- c('Pos', 'Player', 'G', 'A', 'PTS', 'Playoffs?')
 
+hart_position16 <- c(9, 11, 20, 23)
+dmen16 <- c('Erik Karlsson', 'Drew Doughty', 'Brent Burns', 'Kris Letang')
+d_goals16 <- c(16, 14, 27, 16)
+d_assists16 <- c(66, 37, 48, 51)
+d_points16 <- d_goals16 + d_assists16
+d_playoffs16 <- c('No', 'Yes', 'Yes', 'Yes')
+dmen_scoring_data16 <- data.frame(hart_position16, dmen16, d_goals16, d_assists16, d_points16, d_playoffs16)
+colnames(dmen_scoring_data16) <- c('Pos', 'Player', 'G', 'A', 'PTS', 'Playoffs?')
+
+hart_position17 <- c(4, 5, 12, 14)
+dmen17 <- c('Brent Burns', 'Erik Karlsson', 'Ryan Suter', 'Victor Hedman')
+d_goals17 <- c(29, 17, 9, 16)
+d_assists17 <- c(47, 54, 31, 56)
+d_points17 <- d_goals17 + d_assists17
+d_playoffs17 <- c('Yes', 'Yes', 'Yes', 'No')
+dmen_scoring_data17 <- data.frame(hart_position17, dmen17, d_goals17, d_assists17, d_points17, d_playoffs17)
+colnames(dmen_scoring_data17) <- c('Pos', 'Player', 'G', 'A', 'PTS', 'Playoffs?')
+
+hart_position18 <- c(15, 17)
+dmen18 <- c('Drew Doughty', 'Victor Hedman')
+d_goals18 <- c(10, 17)
+d_assists18 <- c(50, 46)
+d_points18 <- d_goals18 + d_assists18
+d_playoffs18 <- c('Yes', 'Yes')
+dmen_scoring_data18 <- data.frame(hart_position18, dmen18, d_goals18, d_assists18, d_points18, d_playoffs18)
+colnames(dmen_scoring_data18) <- c('Pos', 'Player', 'G', 'A', 'PTS', 'Playoffs?')
+
+hart_position19 <- 9
+dmen19 <- 'Mark Giordano'
+d_goals19 <- 17
+d_assists19 <- 57
+d_points19 <- 74
+d_playoffs19 <- 'Yes'
+dmen_scoring_data19 <- data.frame(hart_position19, dmen19, d_goals19, d_assists19, d_points19, d_playoffs19)
+colnames(dmen_scoring_data19) <- c('Pos', 'Player', 'G', 'A', 'PTS', 'Playoffs?')
+
+hart_position20 <- c(7, 12)
+dmen20 <- c('Roman Josi', 'John Carlson')
+d_goals20 <- c(16, 15)
+d_assists20 <- c(49, 60)
+d_points20 <- d_goals20 + d_assists20
+d_playoffs20 <- c('No', 'Yes')
+dmen_scoring_data20 <- data.frame(hart_position20, dmen20, d_goals20, d_assists20, d_points20, d_playoffs20)
+colnames(dmen_scoring_data20) <- c('Pos', 'Player', 'G', 'A', 'PTS', 'Playoffs?')
+
+hart_position21 <- c(12, 13)
+dmen21 <- c('Cale Makar', 'Adam Fox')
+d_goals21 <- c(8, 5)
+d_assists21 <- c(36, 42)
+d_points21 <- d_goals21 + d_assists21
+d_playoffs21 <- c('Yes', 'No')
+dmen_scoring_data21 <- data.frame(hart_position21, dmen21, d_goals21, d_assists21, d_points21, d_playoffs21)
+colnames(dmen_scoring_data21) <- c('Pos', 'Player', 'G', 'A', 'PTS', 'Playoffs?')
+
+hart_position22 <- c(6, 8)
+dmen22 <- c('Roman Josi', 'Cale Makar')
+d_goals22 <- c(23, 28)
+d_assists22 <- c(73, 58)
+d_points22 <- d_goals22 + d_assists22
+d_playoffs22 <- c('Yes', 'Yes')
+dmen_scoring_data22 <- data.frame(hart_position22, dmen22, d_goals22, d_assists22, d_points22, d_playoffs22)
+colnames(dmen_scoring_data22) <- c('Pos', 'Player', 'G', 'A', 'PTS', 'Playoffs?')
