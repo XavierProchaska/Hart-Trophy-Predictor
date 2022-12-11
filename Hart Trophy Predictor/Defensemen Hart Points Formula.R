@@ -19,6 +19,17 @@ defensemen_hart_points <- function(raw_data, playoffs) {
     new_data$hart_points <- hart
     new_data <- new_data[order(new_data$hart_points, decreasing = TRUE),]
 
+    for (k in 1:nrow(new_data)) {
+       if (new_data$I_F_points[k] >= 90) {
+          new_data$hart_points[k] <- new_data$hart_points[k] + 15
+       }
+       else if (new_data$I_F_points[k] >= 80) {
+          new_data$hart_points[k] <- new_data$hart_points[k] + 10
+       }
+       else if (new_data$I_F_points[k] >= 70) {
+          new_data$hart_points[k] <- new_data$hart_points[k] + 5
+       }
+    }
     return(head(new_data, n = 10L))
 }
-defensemen_hart_points('/home/xavier/Documents/Hart Trophy Predictor/Raw Data/skaters_08-09.csv', playoffteams09)
+defensemen_hart_points('/home/xavier/Documents/Hart Trophy Predictor/Raw Data/skaters_21-22.csv', playoffteams22)
