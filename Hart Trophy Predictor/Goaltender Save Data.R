@@ -60,3 +60,66 @@ sv15 <- c(.933, .929, .923, .941, .920)
 gplayoffs15 <- c('Yes', 'Yes', 'Yes', 'Yes', 'Yes')
 goalie_data15 <- data.frame(pos15, goaltenders15, wins15, gaa15, sv15, gplayoffs15)
 colnames(goalie_data15) <- c('Pos', 'Player', 'Wins', 'GAA', 'SV%', 'Playoffs?')
+
+pos16 <- c(4, 10, 15, 17, 17)
+goaltenders16 <- c('Braden Holtby', 'Ben Bishop', 'Roberto Luongo', 'Henrik Lundqvist', 'Corey Schneider')
+wins16 <- c(48, 35, 35, 35, 27)
+gaa16 <- c(2.20, 2.06, 2.35, 2.48, 2.15)
+sv16 <- c(.922, .926, .922, .920, .924)
+gplayoffs16 <- c('Yes', 'Yes', 'Yes', 'Yes', 'No')
+goalie_data16 <- data.frame(pos16, goaltenders16, wins16, gaa16, sv16, gplayoffs16)
+colnames(goalie_data16) <- c('Pos', 'Player', 'Wins', 'GAA', 'SV%', 'Playoffs?')
+
+pos17 <- c(3, 10, 15, 17)
+goaltenders17 <- c('Sergei Bobrovsky', 'Braden Holtby', 'Devan Dubnyk', 'Cam Talbot')
+wins17 <- c(41, 42, 40, 42)
+gaa17 <- c(2.06, 2.07, 2.25, 2.39)
+sv17 <- c(.931, .925, .923, .919)
+gplayoffs17 <- c('Yes', 'Yes', 'Yes', 'Yes')
+goalie_data17 <- data.frame(pos17, goaltenders17, wins17, gaa17, sv17, gplayoffs17)
+colnames(goalie_data17) <- c('Pos', 'Player', 'Wins', 'GAA', 'SV%', 'Playoffs?')
+
+pos18 <- c(12, 13, 15)
+goaltenders18 <- c('Pekka Rinne', 'Connor Hellebuyck', 'Sergei Bobrovsky')
+wins18 <- c(42, 44, 37)
+gaa18 <- c(2.31, 2.36, 2.42)
+sv18 <- c(.927, .924, .921)
+gplayoffs18 <- c('Yes', 'Yes', 'Yes')
+goalie_data18 <- data.frame(pos18, goaltenders18, wins18, gaa18, sv18, gplayoffs18)
+colnames(goalie_data18) <- c('Pos', 'Player', 'Wins', 'GAA', 'SV%', 'Playoffs?')
+
+pos19 <- c(10, 17, 19, 22, 22)
+goaltenders19 <- c('Jordan Binnington', 'Marc-Andre Fleury', 'Ben Bishop', 'Darcy Keumper', 'Andrei Vasilevskiy')
+wins19 <- c(24, 35, 27, 27, 39)
+gaa19 <- c(1.89, 2.51, 1.98, 2.33, 2.40)
+sv19 <- c(.927, .913, .934, .925, .925)
+gplayoffs19 <- c('Yes', 'Yes', 'Yes', 'No', 'Yes')
+goalie_data19 <- data.frame(pos19, goaltenders19, wins19, gaa19, sv19, gplayoffs19)
+colnames(goalie_data19) <- c('Pos', 'Player', 'Wins', 'GAA', 'SV%', 'Playoffs?')
+
+pos20 <- c(6, 15, 17)
+goaltenders20 <- c('Connor Hellebuyck', 'Jacob Markstrom', 'Tristan Jarry')
+wins20 <- c(31, 23, 20)
+gaa20 <- c(2.57, 2.75, 2.43)
+sv20 <- c(.922, .918, .921)
+gplayoffs20 <- c('No', 'Yes', 'No')
+goalie_data20 <- data.frame(pos20, goaltenders20, wins20, gaa20, sv20, gplayoffs20)
+colnames(goalie_data20) <- c('Pos', 'Player', 'Wins', 'GAA', 'SV%', 'Playoffs?')
+
+pos21 <- c(7, 11, 19)
+goaltenders21 <- c('Andrei Vasilevskiy', 'Juuse Saros', 'Connor Hellebuyck')
+wins21 <- c(31, 21, 24)
+gaa21 <- c(2.21, 2.28, 2.58)
+sv21 <- c(.925 , .927, .916)
+gplayoffs21 <- c('Yes', 'Yes', 'Yes')
+goalie_data21 <- data.frame(pos21, goaltenders21, wins21, gaa21, sv21, gplayoffs21)
+colnames(goalie_data21) <- c('Pos', 'Player', 'Wins', 'GAA', 'SV%', 'Playoffs?')
+
+pos22 <- 3
+goaltenders22 <- 'Igor Shesterkin'
+wins22 <- 36
+gaa22 <- 2.07
+sv22 <- .935
+gplayoffs22 <- 'Yes'
+goalie_data22 <- data.frame(pos22, goaltenders22, wins22, gaa22, sv22, gplayoffs22)
+colnames(goalie_data22) <- c('Pos', 'Player', 'Wins', 'GAA', 'SV%', 'Playoffs?')
