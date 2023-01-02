@@ -123,3 +123,7 @@ sv22 <- .935
 gplayoffs22 <- 'Yes'
 goalie_data22 <- data.frame(pos22, goaltenders22, wins22, gaa22, sv22, gplayoffs22)
 colnames(goalie_data22) <- c('Pos', 'Player', 'Wins', 'GAA', 'SV%', 'Playoffs?')
+
+win_range <- c(12, 48)
+gaa_range <- c(1.56, 2.75)
+sv_range <- c(.909, .941)
