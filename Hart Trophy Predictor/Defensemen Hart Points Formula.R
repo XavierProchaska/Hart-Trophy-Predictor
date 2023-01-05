@@ -8,26 +8,26 @@ defensemen_hart_points <- function(raw_data, playoffs) {
        hart <- c(hart, new_data$I_F_points[i])
     }
 
-    for (j in 1:nrow(new_data)) {
-       if (toString(new_data$team[j]) %in% playoffs) {
-          hart[j] <- hart[j] + 10
+    for (i in 1:nrow(new_data)) {
+       if (toString(new_data$team[i]) %in% playoffs) {
+          hart[i] <- hart[i] + 10
        }
        else {
-          hart[j] <- hart[j] - 5
+          hart[i] <- hart[i] - 5
        }
     }
     new_data$hart_points <- hart
     new_data <- new_data[order(new_data$hart_points, decreasing = TRUE),]
 
-    for (k in 1:nrow(new_data)) {
-       if (new_data$I_F_points[k] >= 90) {
-          new_data$hart_points[k] <- new_data$hart_points[k] + 15
+    for (i in 1:nrow(new_data)) {
+       if (new_data$I_F_points[i] >= 90) {
+          new_data$hart_points[i] <- new_data$hart_points[i] + 15
        }
-       else if (new_data$I_F_points[k] >= 80) {
-          new_data$hart_points[k] <- new_data$hart_points[k] + 10
+       else if (new_data$I_F_points[i] >= 80) {
+          new_data$hart_points[i] <- new_data$hart_points[i] + 10
        }
-       else if (new_data$I_F_points[k] >= 70) {
-          new_data$hart_points[k] <- new_data$hart_points[k] + 5
+       else if (new_data$I_F_points[i] >= 70) {
+          new_data$hart_points[i] <- new_data$hart_points[i] + 5
        }
     }
     return(head(new_data, n = 10L))
