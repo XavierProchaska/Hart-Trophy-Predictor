@@ -127,3 +127,6 @@ colnames(goalie_data22) <- c('Pos', 'Player', 'Wins', 'GAA', 'SV%', 'Playoffs?')
 win_range <- c(12, 48)
 gaa_range <- c(1.56, 2.75)
 sv_range <- c(.909, .941)
+
+adjusted_gaa_range <- c(1.50, 3.00)
+adjusted_sv_range <- c(.910, .950)
