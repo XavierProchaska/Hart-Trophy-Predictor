@@ -3,8 +3,8 @@ library('readxl')
 # when making final formula, perform multiple steps with one for loop if possible
 goaltender_hart_points <- function(raw_data) {
     new_data <- read_excel(raw_data, sheet = 2)
-    new_data <- subset(new_data, select = -c(Rk, Age, GP, L, GA, SV, SOG, SO, TIME, G, A, P, PIM))
-    new_data <- new_data[, c(1,2,5,3,4)]
+    new_data <- subset(new_data, select = -c(Rk, Age, GP, L, GA, SV, SOG, TIME, G, A, P, PIM))
+    new_data <- new_data[, c(1,2,5,3,4,6)]
 
     hart <- c()
     for (i in 1:nrow(new_data)) {
@@ -35,4 +35,4 @@ goaltender_hart_points <- function(raw_data) {
     new_data <- new_data[order(new_data$hart_points, decreasing = TRUE),]
     return(head(new_data, n = 10L))
 }
-goaltender_hart_points('/home/xavier/Documents/Hart Trophy Predictor/Raw Data/goalies_08-09.xlsx')
+goaltender_hart_points('/home/xavier/Documents/Git Repositories/Hart-Trophy-Predictor/Hart Trophy Predictor/Raw Data/Goalie Data/goalies_08-09.xlsx')
