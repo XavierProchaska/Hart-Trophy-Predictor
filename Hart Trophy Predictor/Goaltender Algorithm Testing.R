@@ -8,7 +8,7 @@ goalie09 <- goalie09[, c(1,2,5,3,4)]
 # create new df column for Hart Trophy points based off of goalie wins
 hart <- c()
 for (i in 1:nrow(goalie09)) {
-   hart <- c(hart, goalie09$W[i]*1)
+   hart <- c(hart, goalie09$W[i])
 }
 goalie09$hart_points <- hart
 # award Hart Trophy points based on a goalie's SV%
