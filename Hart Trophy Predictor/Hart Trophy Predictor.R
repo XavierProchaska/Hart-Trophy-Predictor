@@ -5,7 +5,7 @@ library('readxl')
 hart_trophy_predictor  <- function(skater_data, goalie_data, playoffs) {
    # read in the skater data, removing unnecessary statistics
    hart_skater_data <- read.csv(skater_data)
-   hart_skater_data <- subset(hart_skater_data, situation = 'all', select = c(name, team, position, I_F_goals, I_F_points))
+   hart_skater_data <- subset(hart_skater_data, situation == 'all', select = c(name, team, position, I_F_goals, I_F_points))
    # create new df column 'hart points' based on each skater's point total
    hart_s <- c()
    for (i in 1:nrow(hart_skater_data)) {
