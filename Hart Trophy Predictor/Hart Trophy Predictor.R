@@ -1,6 +1,6 @@
 # install readxl package to be able to read .xlsx files
 install.packages('readxl')
-library('readxl')
+library(readxl)
 
 hart_trophy_predictor  <- function(skater_data, goalie_data, playoffs) {
    # read in the skater data, removing unnecessary statistics
@@ -37,13 +37,19 @@ hart_trophy_predictor  <- function(skater_data, goalie_data, playoffs) {
          hart_skater_data$hart_points[i] <- hart_skater_data$hart_points[i] - 5
       }
    }
-   # sort the df by hart points
-   hart_skater_data <- hart_skater_data[order(hart_skater_data$hart_points, decreasing = TRUE),]
+   # add GAA, SV%, W, SO columns to skater df
+   hart_skater_data$GAA <- NA
+   hart_skater_data$'SV%' <- NA
+   hart_skater_data$W <- NA
+   hart_skater_data$SO <- NA
+   # rename skater df column names
+   colnames(hart_skater_data) <- c('Name', 'Team', 'Position', 'Goals', 'Points', 'Hart Points', 'GAA', 'SV%', 'W', 'SO')
+   #hart_skater_data[,c(1,2,3,4,5,7,8,9,10,6)]
 
 
    # read in the goaltender data, removing unnecessary statistics
    hart_goaltender_data <- read_excel(goalie_data, sheet = 2)
-   hart_goaltender_data <- subset(hart_goaltender_data, select = -c(Rk, Age, GP, L, GA, SV, SOG, TIME, G, A, P, PIM))
+   hart_goaltender_data <- subset(hart_goaltender_data, select = -c(Rk, Age, GP, L, GA, SV, SOG, TIME, A, PIM))
    # create new df column 'hart points' based on each goaltender's win total
    hart_g <- c()
    for (i in 1:nrow(hart_goaltender_data)) {
@@ -53,6 +59,7 @@ hart_trophy_predictor  <- function(skater_data, goalie_data, playoffs) {
    # assign hart points for goaltender's GAA and SV%
    # give bonus points for playoffs and shutouts
    # deduct points for less than 25 wins
+   # round hart points column
    for (i in 1:nrow(hart_goaltender_data)) {
       sv <- (hart_goaltender_data$'SV%'[i]*1000 - 910)*5/4
       gaa <- 50 - (hart_goaltender_data$GAA[i]*100 - 150)/3
@@ -69,14 +76,39 @@ hart_trophy_predictor  <- function(skater_data, goalie_data, playoffs) {
       else if (hart_goaltender_data$W[i] < 25 && hart_goaltender_data$W[i] >= 20) {
          hart_goaltender_data$hart_points[i] <- hart_goaltender_data$hart_points[i] - 15
       }
+      hart_goaltender_data$hart_points[i] <- floor(hart_goaltender_data$hart_points[i])
    }
-   # sort the df by hart points
-   hart_goaltender_data <- hart_goaltender_data[order(hart_goaltender_data$hart_points, decreasing = TRUE),]
+   # add position column to goaltender df
+   hart_goaltender_data$Position <- 'G'
+   # rename goaltender column names
+   colnames(hart_goaltender_data) <- c('Name', 'Team', 'GAA', 'SV%', 'W', 'SO', 'Goals', 'Points', 'Hart Points', 'Position')
+   #hart_goaltender_data[,c(1, 2, 10, 7, 8, 3, 4, 5, 6, 9)]
 
 
    # merge the two dataframes by hart points
+   final_hart_data <- rbind(hart_skater_data, hart_goaltender_data)
+   # sort the df by Hart Points in descending order
+   final_hart_data <- final_hart_data[order(final_hart_data$'Hart Points', decreasing = TRUE),]
 
+   # of the top 5 players by Hart Points, if two or more belong to the same team remove 10 Hart Points from all such players
+   for (i in 1:5) {
+      for (j in 1:5) {
+         if (i != j) {
+            if (final_hart_data$Team[i] == final_hart_data$Team[j]) {
+               final_hart_data$'Hart Points'[i] <- final_hart_data$'Hart Points'[i] - 10
+            }
+         }
+      }
+   }
+
+   # sort the df by Hart Points in descending order
+   final_hart_data <- final_hart_data[order(final_hart_data$'Hart Points', decreasing = TRUE),]
+   # make Hart Points the last column
+   final_hart_data <- final_hart_data[,c(1,2,3,4,5,7,8,9,10,6)]
+   # make all NA cells blank
+   final_hart_data[is.na(final_hart_data)] <- ''
+   # return top 15 players
+   return(head(final_hart_data, n = 15L))
 }
-test <- hart_trophy_predictor('/home/xavier/Documents/Git Repositories/Hart-Trophy-Predictor/Hart Trophy Predictor/Raw Data/Skater Data/skaters_21-22.csv',
+hart_trophy_predictor('/home/xavier/Documents/Git Repositories/Hart-Trophy-Predictor/Hart Trophy Predictor/Raw Data/Skater Data/skaters_21-22.csv',
 '/home/xavier/Documents/Git Repositories/Hart-Trophy-Predictor/Hart Trophy Predictor/Raw Data/Goalie Data/goalies_21-22.xlsx', playoffteams22)
-View(test)
