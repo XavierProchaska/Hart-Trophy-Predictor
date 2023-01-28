@@ -108,7 +108,8 @@ hart_trophy_predictor  <- function(skater_data, goalie_data, playoffs) {
    # make all NA cells blank
    final_hart_data[is.na(final_hart_data)] <- ''
    # return top 15 players
-   return(head(final_hart_data, n = 15L))
+   return(head(final_hart_data, n = 50L))
 }
-hart_trophy_predictor('/home/xavier/Documents/Git Repositories/Hart-Trophy-Predictor/Hart Trophy Predictor/Raw Data/Skater Data/skaters_21-22.csv',
-'/home/xavier/Documents/Git Repositories/Hart-Trophy-Predictor/Hart Trophy Predictor/Raw Data/Goalie Data/goalies_21-22.xlsx', playoffteams22)
+results <- hart_trophy_predictor('/home/xavier/Documents/Git Repositories/Hart-Trophy-Predictor/Hart Trophy Predictor/Raw Data/Skater Data/skaters_14-15.csv',
+'/home/xavier/Documents/Git Repositories/Hart-Trophy-Predictor/Hart Trophy Predictor/Raw Data/Goalie Data/goalies_14-15.xlsx', playoffteams15)
+View(results)
