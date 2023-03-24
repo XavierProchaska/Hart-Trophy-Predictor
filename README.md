@@ -26,3 +26,16 @@ Each goaltender is given one Hart Point for each win during the regular season. 
 ### Teammate Correction
 After each player is awarded the corresponing amount of Hart Points, they are all added to the same dataframe which is then sorted by Hart Points. Finally, in order to correct for multiple MVP caliber players being on the same team, if any of the top 5 players in Hart Points are on the same team then those players will be deducted 10 Hart Points.
 ## How To Use The Hart Trophy Predictor
+
+### Cloning The Repository
+To clone the Hart Trophy Predictor repository go to the main page of the repository, click on the green Code button and copy one of the HTTPS, SSH, or CLI links.
+### Important Files
+Upon cloning the repository you will see a number of .R files. To use the Hart Trophy Predictor the only parts of the repository you need to focus on are: Hart Trophy Predictor.R, Playoff Lists.R, and the Raw Data folder. Playoff Lists.R contains lists of the playoff teams in each season from the 2008-09 to the 2021-22 season. The Raw Data folder contains season to season data for skaters and goaltenders from 2009-2022.
+### Using The Hart Trophy Predictor Function
+To use the code, call the Hart Trophy Predictor using the path for the skater and goalie data for the season you want to test, along with the list of playoff teams from that season. I have provided an example below:
+```R
+hart_trophy_predictor('/home/xavier/Documents/Git Repositories/Hart-Trophy-Predictor/Hart Trophy Predictor/Raw Data/Skater Data/skaters_15-16.csv',
+'/home/xavier/Documents/Git Repositories/Hart-Trophy-Predictor/Hart Trophy Predictor/Raw Data/Goalie Data/goalies_15-16.xlsx',
+playoffteams16)
+```
+This will return the top 50 players in Hart Points for the 2015-2016 season according to my predictor.
