@@ -26,5 +26,5 @@ playoffteams21 <- c('COL', 'VGK', 'MIN', 'STL', 'CAR', 'FLA', 'T.B', 'NSH',
 'PIT', 'WSH', 'BOS', 'NYI', 'TOR', 'EDM', 'WPG', 'MTL')
 playoffteams22 <- c('CAR', 'NYR', 'PIT', 'FLA', 'TOR', 'T.B', 'BOS', 'WSH', 'COL', 
 'MIN', 'STL', 'CGY', 'EDM', 'LAK', 'DAL', 'NSH')
-playoffteams23_ASG <- c('CAR', 'N.J.', 'NYR', 'BOS', 'TOR', 'T.B.', 'WSH', 'PIT',
+playoffteams23_ASB <- c('CAR', 'N.J.', 'NYR', 'BOS', 'TOR', 'T.B.', 'WSH', 'PIT',
 'DAL', 'WPG', 'MIN', 'SEA', 'LAK', 'VGK', 'EDM', 'COL')
