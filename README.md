@@ -40,3 +40,5 @@ playoffteams16)
 ```
 This will return the top 50 players in Hart Points for the 2015-2016 season according to my predictor.
 ## Contributing
+Anyone with ideas for how to improve upon the algorithm can reach out to me at xavierjamesp@gmail.com.
+## 2023 Results
