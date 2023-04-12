@@ -39,3 +39,4 @@ hart_trophy_predictor('/home/xavier/Documents/Git Repositories/Hart-Trophy-Predi
 playoffteams16)
 ```
 This will return the top 50 players in Hart Points for the 2015-2016 season according to my predictor.
+## Contributing
