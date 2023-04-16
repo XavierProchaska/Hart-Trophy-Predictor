@@ -2,7 +2,7 @@
 install.packages('readxl')
 library(readxl)
 
-hart_trophy_predictor  <- function(skater_data, goalie_data, playoffs) {
+hart_trophy_predictor <- function(skater_data, goalie_data, playoffs) {
    # read in the skater data, removing unnecessary statistics
    hart_skater_data <- read.csv(skater_data)
    hart_skater_data <- subset(hart_skater_data, situation == 'all', select = c(name, team, position, I_F_goals, I_F_points))
@@ -107,6 +107,6 @@ hart_trophy_predictor  <- function(skater_data, goalie_data, playoffs) {
    final_hart_data <- final_hart_data[,c(1,2,3,4,5,7,8,9,10,6)]
    # make all NA cells blank
    final_hart_data[is.na(final_hart_data)] <- ''
-   # return top 15 players
-   return(head(final_hart_data, n = 50L))
+   # return top 25 players
+   return(head(final_hart_data, n = 25L))
 }
