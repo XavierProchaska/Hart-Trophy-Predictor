@@ -42,3 +42,4 @@ This will return the top 50 players in Hart Points for the 2015-2016 season acco
 ## Contributing
 Anyone with ideas for how to improve upon the algorithm can reach out to me at xavierjamesp@gmail.com.
 ## 2023 Results
+![Hart_Top_25_2023](https://user-images.githubusercontent.com/24550277/232346808-a59a9dab-02cf-4461-8475-cd8da94f66d6.png)
