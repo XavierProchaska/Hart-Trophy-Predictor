@@ -20,8 +20,7 @@ def hart_trophy_predictor(skater_data, goalie_data, playoffs):
     hart_skater_data = hart_skater_data.sort_values(by=['hart_points'], ascending=False)
 
     hart_goaltender_data = pd.read_excel(goalie_data, sheet_name='QuantHockey')
-    hart_goaltender_data = hart_goaltender_data.loc[['Name', 'Position', 'Goals', 'Points', 'GAA', 'SV%', 'W', 'SO']]
-
-    return(hart_goaltender_data.head())
+    hart_goaltender_data = hart_goaltender_data[['Name', 'GAA', 'SV%', 'W', 'SO', 'G', 'P']]
+    return(hart_goaltender_data.head(15))
 print(hart_trophy_predictor('/home/xavier/Documents/Git Repositories/Hart-Trophy-Predictor/Hart Trophy Predictor/Raw Data/Skater Data/skaters_21-22.csv',
                             '/home/xavier/Documents/Git Repositories/Hart-Trophy-Predictor/Hart Trophy Predictor/Raw Data/Goalie Data/goalies_22-23.xlsx',0))
